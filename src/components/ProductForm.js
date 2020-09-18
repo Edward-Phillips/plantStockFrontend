@@ -1,14 +1,29 @@
 import React, { useState } from 'react';
-
+import postData from '../api/apiCalls'
 
 const ProductForm  = () => {
 const [ product_name, setProduct_name ] = useState();
   const [ cutting_type, setCutting_type ] = useState();
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const price = cutting_type == 'rooted' ? 3 : 1.5;
     console.log(`product name: ${product_name}`);
     console.log(`cutting_type: ${cutting_type}`);
+    console.log(`price: ${price}`);
+
+    const data = { 
+      'product_name': product_name,
+      'cutting_type': cutting_type,
+      'price': price
+    }
+      const url = 'https://plantstock.herokuapp.com/v1/products'
+    const result = await postData(url, data);
+    console.log(Object.keys(result.products[0]));
+    alert(`product posted:
+      name: ${result.products[0].product_name}
+      cutting type: ${result.products[0].cutting_type}
+      price: ${result.products[0].price}`);
   }
 
   return (
