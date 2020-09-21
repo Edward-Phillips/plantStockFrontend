@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import ProductForm from './components/ProductForm';
+import NavBar from './components/NavBar';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ProductForm></ProductForm>
+  <BrowserRouter>
+    <NavBar/>
+  </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
