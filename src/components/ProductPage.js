@@ -7,7 +7,7 @@ const ProductPage = () => {
   useEffect( () => {
     const retrieveResults = async () => {
       const url = 'http://localhost:3000/v1/products';
-      const result = await (await fetch(url)).json();
+      const result = await (await getData(url));
       console.log(Object.keys(result));
       setProductsArray(result.products);
       console.log(result.products);
@@ -29,12 +29,12 @@ const ProductPage = () => {
       </tr>
     </thead>
     <tbody>
-      {productsArray.map((product) => {
+      {productsArray.map((product, index) => {
         return (
-          <tr>
-            <td>{ product.product_name }</td>
-            <td>{ product.cutting_type }</td>
-            <td>£{ product.price }</td>
+          <tr className='row' key={`row${index}`}>
+          <td className='nameCell' key={`nameCell${index}`}>{ product.product_name }</td>
+          <td className='cuttingCell' key={`cuttingCell${index}`}>{ product.cutting_type }</td>
+          <td className='priceCell' key={`priceCell${index}`}>{ product.price }</td>
           </tr>
         )
       })}
