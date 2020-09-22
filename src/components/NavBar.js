@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, Redirect } from 'react-router-dom';
 import ProductForm from './ProductForm';
 import ProductPage from './ProductPage';
 import StockPage from './StockPage';
@@ -33,6 +33,7 @@ const NavBar = () => {
         <Route path="/product-entry" component={ProductForm} />
         <Route path="/view-products" component={ProductPage} />
         <Route path="/view-stock" component={StockPage} />
+        <Route render={() => <Redirect to={{pathname: "/"}} />} />
       </Switch>
     </div>
   </div>
