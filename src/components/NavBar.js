@@ -3,6 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { Switch, Route, Link } from 'react-router-dom';
 import ProductForm from './ProductForm';
 import ProductPage from './ProductPage';
+import StockPage from './StockPage';
 import Home from './Home';
 
 const NavBar = () => {
@@ -20,6 +21,9 @@ const NavBar = () => {
           <Nav.Link as={Link} to="/view-products">
             View Products
           </Nav.Link>
+          <Nav.Link as={Link} to="/view-stock">
+            View Stock
+          </Nav.Link>
         </Nav>
       </Navbar>
     </div>
@@ -28,6 +32,7 @@ const NavBar = () => {
         <Route exact path="/" component={Home} />
         <Route path="/product-entry" component={ProductForm} />
         <Route path="/view-products" component={ProductPage} />
+        <Route path="/view-stock" component={StockPage} />
       </Switch>
     </div>
   </div>
