@@ -8,10 +8,7 @@ const ProductPage = () => {
     const retrieveResults = async () => {
       const url = 'http://plantstock.herokuapp.net/v1/products';
       const result = await (await getData(url));
-      console.log(Object.keys(result));
       setProductsArray(result.products);
-      console.log(result.products);
-      console.log(productsArray);
     }
     retrieveResults();
 
