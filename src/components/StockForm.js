@@ -47,6 +47,7 @@ const StockForm  = () => {
       <br></br>
       <label for='unrootedCount-input'>Number of Unrooted Cuttings:</label>
       <input type='number' className='unrootedCount-input' placeholder='# unrooted' value={unrootedCount} onChange={(e) => setUnrootedCount(e.target.value)}></input>
+      <input type='submit'></input>
     </form>
   )
 }
