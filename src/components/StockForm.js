@@ -11,7 +11,7 @@ const StockForm  = () => {
     e.preventDefault();
     const totalCuttings = rootedCount + unrootedCount;
     const costPerCutting = amountPaid / totalCuttings;
-    const url = 'https://plantstock.herokuapp.com/v1/products'
+    const url = 'https://plantstock.herokuapp.com/v1/stock'
     if ( rootedCount > 0) {
       const rootedData = { 
         'product_name': productName,
