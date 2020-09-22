@@ -6,7 +6,7 @@ const StockPage = () => {
 
   useEffect( () => {
     const retrieveResults = async () => {
-      const url = 'https://plantstock.herokuapp.net/v1/stock';
+      const url = 'http://plantstock.herokuapp.com/v1/stock';
       const result = await (await getData(url));
       setStockArray(result.stock);
     }

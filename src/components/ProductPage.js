@@ -6,7 +6,7 @@ const ProductPage = () => {
 
   useEffect( () => {
     const retrieveResults = async () => {
-      const url = 'https://plantstock.herokuapp.net/v1/products';
+      const url = 'https://plantstock.herokuapp.com/v1/products';
       const result = await (await getData(url));
       setProductsArray(result.products);
     }
