@@ -22,6 +22,7 @@ const StockPage = () => {
         <th>Product Name</th>
         <th>Cutting Type</th>
         <th>Cost Per Cutting</th>
+        <th>Current Count</th>
       </tr>
     </thead>
     <tbody>
@@ -31,6 +32,7 @@ const StockPage = () => {
           <td className='nameCell' key={`nameCell${index}`}>{ stock.product_name }</td>
           <td className='cuttingCell' key={`cuttingCell${index}`}>{ stock.cutting_type }</td>
           <td className='priceCell' key={`priceCell${index}`}>{ stock.cost_per_cutting }</td>
+          <td className='countCell' key={`countCell${index}`}>{ stock.current_count }</td>
           </tr>
         )
       })}
