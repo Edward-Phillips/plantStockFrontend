@@ -5,6 +5,7 @@ import ProductForm from './ProductForm';
 import ProductPage from './ProductPage';
 import StockPage from './StockPage';
 import StockForm from './StockForm';
+import CustomerForm from './CustomerForm';
 import Home from './Home';
 
 const NavBar = () => {
@@ -25,6 +26,9 @@ const NavBar = () => {
           <Nav.Link as={Link} to="/stock-entry">
             Enter new Stock
           </Nav.Link>
+          <Nav.Link as={Link} to="/customer-entry">
+            Enter new Customer
+          </Nav.Link>
           <Nav.Link as={Link} to="/view-stock">
             View Stock
           </Nav.Link>
@@ -38,6 +42,7 @@ const NavBar = () => {
         <Route path="/view-products" component={ProductPage} />
         <Route path="/view-stock" component={StockPage} />
         <Route path="/stock-entry" component={StockForm} />
+        <Route path="/customer-entry" component={CustomerForm} />
         <Route path="*" component={Home} />
       </Switch>
     </div>
