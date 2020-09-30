@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getData } from '../api/apiCalls'
+import { getData } from '../api/apiCalls';
+import StockItem from './StockItem';
 
 const StockPage = () => {
   const [stockArray, setStockArray] = useState([]);
@@ -28,12 +29,7 @@ const StockPage = () => {
     <tbody>
       {stockArray.map((stock, index) => {
         return (
-          <tr className='row' key={`row${index}`}>
-          <td className='nameCell' key={`nameCell${index}`}>{ stock.product_name }</td>
-          <td className='cuttingCell' key={`cuttingCell${index}`}>{ stock.cutting_type }</td>
-          <td className='priceCell' key={`priceCell${index}`}>{ stock.cost_per_cutting }</td>
-          <td className='countCell' key={`countCell${index}`}>{ stock.current_count }</td>
-          </tr>
+          <StockItem stock={stock} key={index}/>
         )
       })}
     </tbody>
