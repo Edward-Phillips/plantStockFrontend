@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getData } from '../api/apiCalls'
+import { getData } from '../api/apiCalls';
+import ProductItem from './ProductItem';
 
 const ProductPage = () => {
   const [productsArray, setProductsArray] = useState([]);
@@ -28,11 +29,7 @@ const ProductPage = () => {
     <tbody>
       {productsArray.map((product, index) => {
         return (
-          <tr className='row' key={`row${index}`}>
-          <td className='nameCell' key={`nameCell${index}`}>{ product.product_name }</td>
-          <td className='cuttingCell' key={`cuttingCell${index}`}>{ product.cutting_type }</td>
-          <td className='priceCell' key={`priceCell${index}`}>{ product.price }</td>
-          </tr>
+          <ProductItem key={index} product={product}/>
         )
       })}
     </tbody>
