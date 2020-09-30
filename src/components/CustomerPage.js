@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getData } from '../api/apiCalls'
+import { getData } from '../api/apiCalls';
+import CustomerItem from './CustomerItem';
 
 const CustomerPage = () => {
   const [customersArray, setCustomersArray] = useState([]);
@@ -26,10 +27,7 @@ const CustomerPage = () => {
     <tbody>
       {customersArray.map((customer, index) => {
         return (
-          <tr className='row' key={`row${index}`}>
-          <td className='nameCell' key={`nameCell${index}`}>{ customer.name }</td>
-          <td className='addressCell' key={`addressCell${index}`}>{ customer.address }</td>
-          </tr>
+          <CustomerItem customer={customer} key={index}/>
         )
       })}
     </tbody>
