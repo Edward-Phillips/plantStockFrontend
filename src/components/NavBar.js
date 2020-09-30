@@ -31,10 +31,10 @@ const NavBar = () => {
             View Stock
           </Nav.Link>
           <Nav.Link as={Link} to="/customer-entry">
-            Enter new Customer
+            Add new Customer
           </Nav.Link>
           <Nav.Link as={Link} to="/view-customers">
-            View Products
+            View Customers
           </Nav.Link>
         </Nav>
       </Navbar>
