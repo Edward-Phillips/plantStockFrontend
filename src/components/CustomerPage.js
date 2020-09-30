@@ -24,7 +24,7 @@ const CustomerPage = () => {
       </tr>
     </thead>
     <tbody>
-      {customerArray.map((customer, index) => {
+      {customersArray.map((customer, index) => {
         return (
           <tr className='row' key={`row${index}`}>
           <td className='nameCell' key={`nameCell${index}`}>{ customer.name }</td>
