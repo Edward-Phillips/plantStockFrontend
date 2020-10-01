@@ -3,13 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import NavBar from './components/NavBar/NavBar';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-  <BrowserRouter>
     <NavBar/>
-  </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
