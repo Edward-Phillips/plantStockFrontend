@@ -1,13 +1,14 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Switch, Route, Link } from 'react-router-dom';
-import ProductForm from './ProductForm';
-import ProductPage from './ProductPage';
-import StockPage from './StockPage';
-import StockForm from './StockForm';
-import CustomerForm from './CustomerForm';
-import CustomerPage from './CustomerPage';
-import Home from './Home';
+import ProductForm from '../ProductForm';
+import ProductPage from '../ProductPage';
+import StockPage from '../StockPage';
+import StockForm from '../StockForm';
+import CustomerForm from '../Customers/CustomerForm/CustomerForm';
+import CustomerPage from '../Customers/CustomerPage/CustomerPage';
+import Home from '../Home';
+import './NavBar.css';
 
 const NavBar = () => {
   return (
@@ -18,29 +19,29 @@ const NavBar = () => {
           PlantStock
         </Navbar.Brand>
         <Nav className="ml-auto">
-          <Nav.Link as={Link} to="/product-entry">
+          <Nav.Link className='navItem' as={Link} to="/product-entry">
             Enter new Product
           </Nav.Link>
-          <Nav.Link as={Link} to="/view-products">
+          <Nav.Link className='navItem' as={Link} to="/view-products">
             View Products
           </Nav.Link>
-          <Nav.Link as={Link} to="/stock-entry">
+          <Nav.Link className='navItem' as={Link} to="/stock-entry">
             Enter new Stock
           </Nav.Link>
-          <Nav.Link as={Link} to="/view-stock">
+          <Nav.Link className='navItem' as={Link} to="/view-stock">
             View Stock
           </Nav.Link>
-          <Nav.Link as={Link} to="/customer-entry">
+          <Nav.Link className='navItem' as={Link} to="/customer-entry">
             Add new Customer
           </Nav.Link>
-          <Nav.Link as={Link} to="/view-customers">
+          <Nav.Link className='navItem' as={Link} to="/view-customers">
             View Customers
           </Nav.Link>
         </Nav>
       </Navbar>
     </div>
     <div>
-      <Switch>
+      <Switch className='switch'>
         <Route exact path="/" component={Home} />
         <Route path="/product-entry" component={ProductForm} />
         <Route path="/view-products" component={ProductPage} />

@@ -1,0 +1,26 @@
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  column-gap: 20px; 
+  width: 95%;
+  margin: auto;
+}
+
+#bar {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  background-color: chartreuse;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ml-auto {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.switch {
+  margin: auto;
+}
