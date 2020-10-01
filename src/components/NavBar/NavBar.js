@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import ProductForm from '../ProductForm';
-import ProductPage from '../ProductPage';
-import StockPage from '../StockPage';
-import StockForm from '../StockForm';
-import CustomerForm from '../Customers/CustomerForm/CustomerForm';
-import CustomerPage from '../Customers/CustomerPage/CustomerPage';
-import Home from '../Home';
+import ProductForm from '../Products/ProductForm';
+import ProductPage from '../Products/ProductPage';
+import StockPage from '../Stock/StockPage';
+import StockForm from '../Stock/StockForm';
+import CustomerForm from '../Customers//CustomerForm';
+import CustomerPage from '../Customers/CustomerPage';
+import Home from '../Miscellaneous/Home';
 import './NavBar.css';
 
 const NavBar = () => {
@@ -29,7 +29,6 @@ const NavBar = () => {
         return <CustomerPage/>
       default:
         return <Home/>
-        break;
     }
   }
 
