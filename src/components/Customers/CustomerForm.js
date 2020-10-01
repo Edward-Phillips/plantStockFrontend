@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { postData } from '../../../api/apiCalls'
+import { postData } from '../../api/apiCalls'
 
 const CustomerForm  = () => {
   const [ name, setName ] = useState();
@@ -19,10 +19,10 @@ const CustomerForm  = () => {
 
   return (
     <form onSubmit={ handleSubmit }>
-      <label for='name-input'>Customer Name: </label>
+      <label htmlFor='name-input'>Customer Name: </label>
       <input type='text' className="name-input" placeholder='Enter Customer name here' value={name} onChange={(e) => setName(e.target.value)}></input>
       <br></br>
-      <label for='address-input'>Customer Address:  </label>
+      <label htmlFor='address-input'>Customer Address:  </label>
       <input type='text' className='address-input' placeholder='WHERE DO THEY LIVE' value={address} onChange={(e) => setAddress(e.target.value)}></input>
       <br></br>
       <input type='submit'></input>
