@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { getData } from '../../api/apiCalls';
 import ProductItem from './ProductItem';
+import Spinner from 'react-bootstrap/Spinner';
 
 const ProductPage = () => {
   const [productsArray, setProductsArray] = useState([]);
+  const [fetchStatus, setFetchStatus] = useState(true);
+
 
   useEffect( () => {
     const retrieveResults = async () => {
       const url = 'https://plantstock.herokuapp.com/v1/products';
       const result = await (await getData(url));
       setProductsArray(result.products);
+      setFetchStatus(false);
     }
     retrieveResults();
 
@@ -17,7 +21,7 @@ const ProductPage = () => {
 
   return (
     <>
-    <h1>Products Table</h1>
+    <h1>Products</h1>
     <table>
     <thead>
       <tr>
@@ -27,11 +31,16 @@ const ProductPage = () => {
       </tr>
     </thead>
     <tbody>
-      {productsArray.map((product, index) => {
-        return (
-          <ProductItem key={index} product={product}/>
-        )
-      })}
+      {
+        fetchStatus ?
+          <Spinner animation="border" role="status"><span className="sr-only">Loading...</span></Spinner>
+        :
+          productsArray.map((product, index) => {
+            return (
+              <ProductItem key={index} product={product}/>
+            )
+          })
+      }
     </tbody>
     </table>
     </>
