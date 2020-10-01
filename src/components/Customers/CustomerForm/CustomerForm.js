@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { postData } from '../api/apiCalls'
+import { postData } from '../../../api/apiCalls'
 
 const CustomerForm  = () => {
   const [ name, setName ] = useState();

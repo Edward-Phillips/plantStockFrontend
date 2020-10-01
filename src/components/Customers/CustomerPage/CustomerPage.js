@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getData } from '../api/apiCalls';
-import CustomerItem from './CustomerItem';
+import { getData } from '../../../api/apiCalls';
+import CustomerItem from '../CustomerItem/CustomerItem';
 
 const CustomerPage = () => {
   const [customersArray, setCustomersArray] = useState([]);
