@@ -22,28 +22,30 @@ const StockPage = () => {
   return (
     <>
     <h1>Current Stock</h1>
-    <Table striped bordered size="sm">
-    <thead>
-      <tr className="stock">
-        <th>Product Name</th>
-        <th>Cutting Type</th>
-        <th>Cost Per Cutting</th>
-        <th>Current Count</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-        fetchStatus ?
-          <Spinner animation="border" role="status"><span className="sr-only">Loading...</span></Spinner>
-        :
-          stockArray.map((stock, index) => {
-            return (
-              <StockItem stock={stock} key={index}/>
-            )
-          })
-      }
-    </tbody>
-    </Table>
+    {
+      fetchStatus ?
+        <Spinner animation="border" role="status" className='spinner'><span className="sr-only spinner">Loading...</span></Spinner>
+      :
+        <Table striped bordered size="sm">
+        <thead>
+          <tr className="stock">
+            <th>Product Name</th>
+            <th>Cutting Type</th>
+            <th>Cost Per Cutting</th>
+            <th>Current Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            stockArray.map((stock, index) => {
+              return (
+                <StockItem stock={stock} key={index}/>
+              )
+            })
+          }
+        </tbody>
+        </Table>
+    }
     </>
   )
 }

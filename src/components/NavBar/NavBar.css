@@ -18,3 +18,18 @@
 * {
   margin: auto;
 }
+
+table.customer {
+  width: 50%;
+  min-width: 400px;
+}
+
+table.product {
+  width: 50%;
+  min-width: 400px;
+}
+
+table.stock {
+  width: 50%;
+  min-width: 400px;
+}
