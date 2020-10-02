@@ -38,16 +38,12 @@ const StockForm  = () => {
     <form onSubmit={ handleSubmit }>
       <label htmlFor='product_name-input'>Product Name: </label>
       <input type='text' className="product_name-input" placeholder='Enter plant name here' value={productName} onChange={(e) => setProductName(e.target.value)}></input>
-      <br></br>
       <label htmlFor='amountPaid-input'>Total Paid:</label>
       <input type='number' className='amountPaid-input' placeholder='price' value={amountPaid} onChange={(e) => setAmountPaid(e.target.value)}></input>
-      <br></br>
       <label htmlFor='rootedCount-input'>Number of Rooted Cuttings:</label>
       <input type='number' className='rootedCount-input' placeholder='# rooted' value={rootedCount} onChange={(e) => setRootedCount(e.target.value)}></input>
-      <br></br>
       <label htmlFor='unrootedCount-input'>Number of Unrooted Cuttings:</label>
       <input type='number' className='unrootedCount-input' placeholder='# unrooted' value={unrootedCount} onChange={(e) => setUnrootedCount(e.target.value)}></input>
-      <br></br>
       <input type='submit'></input>
     </form>
   )

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { getData } from '../../api/apiCalls';
 import StockItem from './StockItem';
 import Spinner from 'react-bootstrap/Spinner';
+import Table from 'react-bootstrap/Table';
+import './StockPage.css';
 
 const StockPage = () => {
   const [stockArray, setStockArray] = useState([]);
@@ -20,9 +22,9 @@ const StockPage = () => {
   return (
     <>
     <h1>Current Stock</h1>
-    <table>
+    <Table striped bordered size="sm">
     <thead>
-      <tr>
+      <tr className="stock">
         <th>Product Name</th>
         <th>Cutting Type</th>
         <th>Cost Per Cutting</th>
@@ -41,7 +43,7 @@ const StockPage = () => {
           })
       }
     </tbody>
-    </table>
+    </Table>
     </>
   )
 }

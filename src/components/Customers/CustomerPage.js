@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { getData } from '../../api/apiCalls';
 import CustomerItem from './CustomerItem';
 import Spinner from 'react-bootstrap/Spinner';
-
+import Table from 'react-bootstrap/Table';
+import './CustomerPage.css';
 
 const CustomerPage = () => {
   const [customersArray, setCustomersArray] = useState([]);
@@ -21,9 +22,9 @@ const CustomerPage = () => {
   return (
     <>
     <h1>Customer Table</h1>
-    <table>
+    <Table striped bordered size="md">
     <thead>
-      <tr>
+      <tr className="customer">
         <th>Customer Name</th>
         <th>Customer Address</th>
       </tr>
@@ -40,7 +41,7 @@ const CustomerPage = () => {
             })
       }
     </tbody>
-    </table>
+    </Table>
     </>
   )
 }
