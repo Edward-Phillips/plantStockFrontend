@@ -1,0 +1,25 @@
+h1 {
+  text-align: center;
+}
+
+tr.customer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+table {
+  width: 75%;
+  max-width: 750px;
+}
+/* 
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+} */
+
+tbody {
+  display: grid;
+  align-items: center;
+}
