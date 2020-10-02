@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { getData } from '../../api/apiCalls';
 import ProductItem from './ProductItem';
 import Spinner from 'react-bootstrap/Spinner';
@@ -24,27 +24,29 @@ const ProductPage = () => {
   return (
     <>
     <h1>Products</h1>
-    <Table striped bordered size="md">
-      <thead>
-        <tr>
-          <th>Product Name</th>
-          <th>Cutting Type</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          fetchStatus ?
-            <Spinner animation="border" role="status"><span className="sr-only spinner">Loading...</span></Spinner>
-          :
-            productsArray.map((product, index) => {
-              return (
-                <ProductItem key={index} product={product}/>
-              )
-            })
-        }
-      </tbody>
-    </Table>
+    {
+      fetchStatus ?
+        <Spinner animation="border" role="status" className='spinner'><span className="sr-only spinner">Loading...</span></Spinner>
+      :
+        <Table className='product' striped bordered size="md">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Cutting Type</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              productsArray.map((product, index) => {
+                return (
+                  <ProductItem key={index} product={product}/>
+                )
+              })
+            }
+          </tbody>
+        </Table>
+    }
     </>
   )
 }
