@@ -6,7 +6,7 @@ const CustomerPersonalPage =(customer) => {
 
   const [orders, setOrders] = useState();
   const [suggestedStock, setSuggestedStock] = useState();
-  const [fetchStatus, setFetchStatus] = useState();
+  const [fetchStatus, setFetchStatus] = useState(true);
 
   useEffect( () => {
     const retrieveResults = async () => {
@@ -16,6 +16,7 @@ const CustomerPersonalPage =(customer) => {
       const suggestedStockResults = await getData(suggestedStockUrl);
       setOrders(orderResults.orders);
       setSuggestedStock(suggestedStockResults.stock);
+      setFetchStatus(false);
     }
   });
 }
