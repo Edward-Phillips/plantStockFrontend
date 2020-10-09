@@ -22,6 +22,7 @@ const CustomerPersonalPage =(customer) => {
       setSuggestedStock(suggestedStockResults.stock);
       setFetchStatus(false);
     }
+    retrieveResults();
   }, [customer.id]);
 
   return (
