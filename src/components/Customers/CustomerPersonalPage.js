@@ -3,7 +3,7 @@ import { getData } from '../../api/apiCalls';
 import Spinner from 'react-bootstrap/Spinner';
 import Table from 'react-bootstrap/Table';
 import StockItem from '../Stock/StockItem';
-import CustomerOrder from './'
+import CustomerOrder from './CustomerOrder';
 
 
 const CustomerPersonalPage =(customer) => {
