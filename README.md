@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and is intended to serve as a front end portion of a stock management system for plant cuttings, for a more detailed README please check out the [back end](https://github.com/Edward-Phillips/plantStock).
 
 ## Available Scripts
 
