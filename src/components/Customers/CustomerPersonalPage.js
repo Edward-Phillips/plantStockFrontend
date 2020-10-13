@@ -4,9 +4,10 @@ import Spinner from 'react-bootstrap/Spinner';
 import Table from 'react-bootstrap/Table';
 import StockItem from '../Stock/StockItem';
 import CustomerOrder from './CustomerOrder';
+import { Button } from 'react-bootstrap';
 
 
-const CustomerPersonalPage =(customer) => {
+const CustomerPersonalPage =(props) => {
 
   const [orders, setOrders] = useState();
   const [suggestedStock, setSuggestedStock] = useState();
@@ -14,7 +15,7 @@ const CustomerPersonalPage =(customer) => {
 
   useEffect( () => {
     const retrieveResults = async () => {
-      const orderUrl = `https://plantstock.herokuapp.com/v1/orders/${customer.id}`;
+      const orderUrl = `https://plantstock.herokuapp.com/v1/orders/${props.customer.id}`;
       const suggestedStockUrl = orderUrl + '/suggested';
       const orderResults = await getData(orderUrl);
       const suggestedStockResults = await getData(suggestedStockUrl);
@@ -23,15 +24,20 @@ const CustomerPersonalPage =(customer) => {
       setFetchStatus(false);
     }
     retrieveResults();
-  }, [customer.id]);
+  }, [props.customer.id]);
+
+  const resetPersonalCustomer = () => {
+    props.personalCustomerHandler(null);
+  }
 
   return (
     <div>
-      <h1>Customer Details for {customer.name}</h1>
+      <h1>Customer Details for {props.customer.name}</h1>
       <section>
         <div>
-          <div className='name customer'>{ customer.name }</div>
-          <div className='address customer'>{ customer.address }</div>
+          <div className='name customer'>name: { props.customer.name }</div>
+          <div className='address customer'>address: { props.customer.address }</div>
+          <Button onClick={()=>{resetPersonalCustomer()}}>Back to Customers</Button>
         </div>
         <div>
         <h2>Order History</h2>
