@@ -1,12 +1,16 @@
 import React from 'react';
 
-const CustomerItem = ({customer}) => {
+const CustomerItem = (props) => {
+
+  const updatePersonalCustomer = (newCustomer) => {
+    props.personalCustomerHandler(newCustomer)
+  }
 
   return (
-    <tr className='customer' key={customer.id}>
-          <td className='nameCell' key={customer.id}>{ customer.name }</td>
-          <td className='addressCell' key={customer.id}>{ customer.address }</td>
-          </tr>
+    <tr className='customer' key={props.customer.id} onClick={()=> {updatePersonalCustomer(props.customer)}}>
+      <td className='nameCell' key={props.customer.id}>{ props.customer.name }</td>
+      <td className='addressCell' key={props.customer.id}>{ props.customer.address }</td>
+    </tr>
   )
 }
 

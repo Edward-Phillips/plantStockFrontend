@@ -5,7 +5,7 @@ import ProductPage from '../Products/ProductPage';
 import StockPage from '../Stock/StockPage';
 import StockForm from '../Stock/StockForm';
 import CustomerForm from '../Customers/CustomerForm';
-import CustomerPage from '../Customers/CustomerPage';
+import CustomerPage from '../Customers/CustomersPage';
 import Home from '../Miscellaneous/Home';
 import './NavBar.css';
 import Button from 'react-bootstrap/Button';
