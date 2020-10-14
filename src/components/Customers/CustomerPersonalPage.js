@@ -10,7 +10,7 @@ import { Button } from 'react-bootstrap';
 const CustomerPersonalPage =(props) => {
 
   const [orders, setOrders] = useState();
-  const [suggestedStock, setSuggestedStock] = useState();
+  const [suggestedStock, setSuggestedStock] = useState([]);
   const [fetchStatus, setFetchStatus] = useState(true);
 
   useEffect( () => {
@@ -24,7 +24,7 @@ const CustomerPersonalPage =(props) => {
       setFetchStatus(false);
     }
     retrieveResults();
-  }, [props.customer.id]);
+  }, []);
 
   const resetPersonalCustomer = () => {
     props.personalCustomerHandler(null);
