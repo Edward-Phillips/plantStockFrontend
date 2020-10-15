@@ -1,7 +1,6 @@
 import React from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import Table from 'react-bootstrap/Table';
-import CustomerOrder from '../Customers/CustomerOrder';
 
 const SpinnerTable = (props) => {
 
@@ -27,7 +26,7 @@ const SpinnerTable = (props) => {
                   {
                     props.contents.map((order, index) => {
                       return (
-                        <CustomerOrder key={index} order={order}/>
+                        <props.wrapper key={index} order={order}/>
                       )
                     })
                   }
