@@ -24,9 +24,9 @@ const SpinnerTable = (props) => {
                 </thead>
                 <tbody>
                   {
-                    props.contents.map((order, index) => {
+                    props.contents.map((content, index) => {
                       return (
-                        <props.wrapper key={index} order={order}/>
+                        <props.wrapper key={index} content={content}/>
                       )
                     })
                   }
