@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const CustomerOrder = (props) => {
   return (
-    <tr key={props.order.id}>
-      <td className='dateCell'>{props.order.order_date}</td>
-      <td className='amountCell'>{props.order.order_total}</td>
+    <tr key={props.content.id}>
+      <td className='dateCell'>{props.content.order_date}</td>
+      <td className='amountCell'>{props.content.order_total}</td>
     </tr>
   )
 }
