@@ -6,6 +6,7 @@ import StockItem from '../Stock/StockItem';
 import CustomerOrder from './CustomerOrder';
 import { Button } from 'react-bootstrap';
 import SpinnerTable from '../Miscellaneous/SpinnerTable';
+import OrderForm from '../Orders/OrderForm';
 
 
 const CustomerPersonalPage =(props) => {
@@ -48,6 +49,10 @@ const CustomerPersonalPage =(props) => {
       <section>
       <h2>Suggested Stock</h2>
         <SpinnerTable headers={ ['Product Name', 'Cutting Type', 'Cost Per Cutting', 'Current Count'] } fetchStatus={ fetchStatus } contents={ suggestedStock } wrapper={ StockItem } />
+      </section>
+      <section>
+        <h2>Add new Order</h2>
+        <OrderForm customer={props.customer}/>
       </section>
     </div>
   )
