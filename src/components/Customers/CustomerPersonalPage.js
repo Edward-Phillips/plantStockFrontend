@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { getData } from '../../api/apiCalls';
-import Spinner from 'react-bootstrap/Spinner';
-import Table from 'react-bootstrap/Table';
 import StockItem from '../Stock/StockItem';
 import CustomerOrder from './CustomerOrder';
 import { Button } from 'react-bootstrap';
@@ -18,7 +16,7 @@ const CustomerPersonalPage =(props) => {
   useEffect( () => {
     const retrieveResults = async () => {
       const orderUrl = `https://plantstock.herokuapp.com/v1/orders/${props.customer.id}`;
-      const suggestedStockUrl = orderUrl + '/suggested';
+      // const suggestedStockUrl = orderUrl + '/suggested';
       const orderResults = await getData(orderUrl);
       // const suggestedStockResults = await getData(suggestedStockUrl);
       setOrders(orderResults.orders);
