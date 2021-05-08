@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { getData } from '../../api/apiCalls';
-import Spinner from 'react-bootstrap/Spinner';
-import Table from 'react-bootstrap/Table';
 import StockItem from '../Stock/StockItem';
 import CustomerOrder from './CustomerOrder';
 import { Button } from 'react-bootstrap';
 import SpinnerTable from '../Miscellaneous/SpinnerTable';
+import OrderForm from '../Orders/OrderForm';
 
 
 const CustomerPersonalPage =(props) => {
@@ -17,7 +16,7 @@ const CustomerPersonalPage =(props) => {
   useEffect( () => {
     const retrieveResults = async () => {
       const orderUrl = `https://plantstock.herokuapp.com/v1/orders/${props.customer.id}`;
-      const suggestedStockUrl = orderUrl + '/suggested';
+      // const suggestedStockUrl = orderUrl + '/suggested';
       const orderResults = await getData(orderUrl);
       // const suggestedStockResults = await getData(suggestedStockUrl);
       setOrders(orderResults.orders);
@@ -48,6 +47,10 @@ const CustomerPersonalPage =(props) => {
       <section>
       <h2>Suggested Stock</h2>
         <SpinnerTable headers={ ['Product Name', 'Cutting Type', 'Cost Per Cutting', 'Current Count'] } fetchStatus={ fetchStatus } contents={ suggestedStock } wrapper={ StockItem } />
+      </section>
+      <section>
+        <h2>Add new Order</h2>
+        <OrderForm customer={props.customer}/>
       </section>
     </div>
   )

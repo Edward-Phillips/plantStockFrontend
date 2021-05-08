@@ -1,8 +1,7 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getData } from '../../api/apiCalls';
 import ProductItem from './ProductItem';
-import Spinner from 'react-bootstrap/Spinner';
-import Table from 'react-bootstrap/Table';
+import SpinnerTable from '../Miscellaneous/SpinnerTable';
 import './ProductPage.css';
 
 const ProductPage = () => {
@@ -24,29 +23,7 @@ const ProductPage = () => {
   return (
     <>
     <h1>Products</h1>
-    {
-      fetchStatus ?
-        <Spinner animation="border" role="status" className='spinner'><span className="sr-only spinner">Loading...</span></Spinner>
-      :
-        <Table className='product' striped bordered size="md">
-          <thead>
-            <tr>
-              <th>Product Name</th>
-              <th>Cutting Type</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              productsArray.map((product, index) => {
-                return (
-                  <ProductItem key={index} product={product}/>
-                )
-              })
-            }
-          </tbody>
-        </Table>
-    }
+    <SpinnerTable headers={['Product Name', 'Cutting Type', 'Price']} fetchStatus={ fetchStatus } contents={ productsArray } wrapper={ ProductItem } />
     </>
   )
 }

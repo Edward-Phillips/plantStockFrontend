@@ -8,7 +8,7 @@ const [ productName, setProductName ] = useState();
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const price = cuttingType == 'rooted' ? 3 : 1.5;
+    const price = cuttingType === 'rooted' ? 3 : 1.5;
     console.log(`product name: ${productName}`);
     console.log(`cutting_type: ${cuttingType}`);
     console.log(`price: ${price}`);

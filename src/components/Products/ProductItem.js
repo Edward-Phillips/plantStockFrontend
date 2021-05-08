@@ -1,12 +1,12 @@
 import React from 'react';
 
-const ProductItem = ({product}) => {
+const ProductItem = ({content}) => {
   
   return (
-    <tr key={product.id}>
-    <td className='nameCell' key={product.id}>{ product.product_name }</td>
-    <td className='cuttingCell' key={product.id}>{ product.cutting_type }</td>
-    <td className='priceCell' key={product.id}>{ product.price }</td>
+    <tr key={content.id}>
+    <td className='nameCell' key={content.id}>{ content.product_name }</td>
+    <td className='cuttingCell' key={content.id}>{ content.cutting_type }</td>
+    <td className='priceCell' key={content.id}>{ content.price }</td>
     </tr>
   )
 }

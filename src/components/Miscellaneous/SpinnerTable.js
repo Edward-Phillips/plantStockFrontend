@@ -14,7 +14,7 @@ const SpinnerTable = (props) => {
                 <thead>
                   <tr>
                     {
-                      props.headers.map((header, index) => {
+                      props.headers.map((header) => {
                         return (
                           <th>{ header }</th>
                         )
