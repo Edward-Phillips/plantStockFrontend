@@ -1,13 +1,15 @@
 import React from 'react';
 
-const StockItem = ({stock}) => {
+const StockItem = ({content}) => {
+
+  console.log(content);
   
   return (
-    <tr className='stock' key={stock.id}>
-      <td className='nameCell' key={stock.id}>{ stock.product_name}</td>
-      <td className='cuttingCell' key={stock.id}>{ stock.cutting_type}</td>
-      <td className='priceCell' key={stock.id}>{ stock.cost_per_cutting}</td>
-      <td className='countCell' key={stock.id}>{ stock.current_count}</td>
+    <tr className='stock' key={content.id}>
+      <td className='nameCell' key={content.id}>{ content.product_name}</td>
+      <td className='cuttingCell' key={content.id}>{ content.cutting_type}</td>
+      <td className='priceCell' key={content.id}>{ content.cost_per_cutting}</td>
+      <td className='countCell' key={content.id}>{ content.current_count}</td>
     </tr>
   )
 }
